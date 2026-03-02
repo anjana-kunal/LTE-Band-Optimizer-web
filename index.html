@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intelligent LTE Band Optimizer — Research Project</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ─────────── NAVBAR ─────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-icon">📡</span>
+        <span class="logo-text">LTE <span class="accent">Optimizer</span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#objectives">Objectives</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#team">Team</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─────────── HERO ─────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+      <div class="hero-orb orb3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        University of Sri Jayewardenepura · Faculty of Technology · Group 14
+      </div>
+      <h1 class="hero-title">
+        Intelligent LTE Band<br />
+        <span class="gradient-text">Recommendation System</span>
+      </h1>
+      <p class="hero-subtitle">
+        Based on Crowdsourced Spatio-Temporal Performance Analysis<br />
+        <em>A Case Study of Sri Lanka</em>
+      </p>
+      <div class="hero-tags">
+        <span class="tag">AI-Powered</span>
+        <span class="tag">Crowdsourced</span>
+        <span class="tag">LTE Optimization</span>
+        <span class="tag">Sri Lanka</span>
+        <span class="tag">Android App</span>
+        <span class="tag">RAG Architecture</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#results" class="btn-primary">View Results</a>
+        <a href="#methodology" class="btn-outline">Methodology →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-value">+59.8%</div>
+          <div class="stat-label">Download Speed Gain</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-value">5,000+</div>
+          <div class="stat-label">Towers Mapped</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-value">95.3%</div>
+          <div class="stat-label">Connection Accuracy</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-value">+123%</div>
+          <div class="stat-label">Peak Hour Improvement</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll to Explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ─────────── ABSTRACT ─────────── -->
+  <section class="section abstract-section" id="abstract">
+    <div class="container">
+      <div class="section-badge">Abstract</div>
+      <div class="abstract-grid">
+        <div class="abstract-text">
+          <h2 class="section-title">Redefining How Mobile Devices<br /><span class="gradient-text">Choose Their Network</span></h2>
+          <p>
+            The rapid growth of mobile data consumption has intensified performance challenges in LTE networks, particularly where multiple frequency bands are deployed. In Sri Lanka, mobile devices automatically select LTE bands based purely on signal strength — without considering real-time congestion or temporal performance patterns.
+          </p>
+          <p>
+            This results in unbalanced load distribution across available bands, degrading user experience despite adequate network coverage. Our research proposes an <strong>Intelligent LTE Band Recommendation System</strong> powered by crowdsourced spatio-temporal performance analysis to address this critical gap.
+          </p>
+          <p>
+            By leveraging real-world LTE data — signal metrics, throughput, location, and time-of-day parameters — combined with a <strong>Qwen 3 32B LLM with RAG architecture</strong>, we provide context-aware, actionable band recommendations that significantly improve individual user throughput.
+          </p>
+        </div>
+        <div class="abstract-visual">
+          <div class="signal-paradox-card">
+            <div class="paradox-title">⚡ The Signal Strength Paradox</div>
+            <div class="paradox-content">
+              <div class="paradox-row auto">
+                <div class="paradox-label">
+                  <div class="paradox-mode">Auto Selection</div>
+                  <div class="paradox-signal">RSRP: −92.62 dBm (Stronger)</div>
+                </div>
+                <div class="paradox-speed-bar">
+                  <div class="bar-fill bar-auto" style="width:62%"></div>
+                  <span class="bar-value">13.37 Mbps</span>
+                </div>
+              </div>
+              <div class="paradox-row manual">
+                <div class="paradox-label">
+                  <div class="paradox-mode">Manual Selection</div>
+                  <div class="paradox-signal">RSRP: −94.45 dBm (Weaker)</div>
+                </div>
+                <div class="paradox-speed-bar">
+                  <div class="bar-fill bar-manual" style="width:100%"></div>
+                  <span class="bar-value">21.37 Mbps ✓</span>
+                </div>
+              </div>
+              <div class="paradox-insight">
+                💡 Stronger signal ≠ Faster speed. Congestion is the hidden bottleneck.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── PROBLEM ─────────── -->
+  <section class="section dark-section" id="problem">
+    <div class="container">
+      <div class="section-badge light">Research Problem</div>
+      <h2 class="section-title light">The Core Challenge</h2>
+      <p class="section-intro light">Despite LTE networks covering multiple frequency bands in Sri Lanka, users consistently experience performance bottlenecks that trace back to a single root cause.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">📶</div>
+          <h3>Signal ≠ Speed</h3>
+          <p>Current LTE band selection relies solely on RSRP (signal strength), directing users to the strongest signal without accounting for band congestion or load.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">⚡</div>
+          <h3>Peak-Hour Collapse</h3>
+          <p>During lunch and evening peaks, automatic selection fails catastrophically — causing speeds to drop over 3x while better bands sit underutilized nearby.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🗺️</div>
+          <h3>No Location Context</h3>
+          <p>Band performance varies dramatically across geography and time. Existing tools offer no spatio-temporal intelligence — only raw metrics that non-technical users can't act on.</p>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">🇱🇰</div>
+          <h3>Sri Lanka Data Gap</h3>
+          <p>No systematic study exists for LTE band performance in Sri Lanka, despite unique multi-operator deployment patterns by Dialog, Mobitel, and Hutch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── OBJECTIVES ─────────── -->
+  <section class="section" id="objectives">
+    <div class="container">
+      <div class="section-badge">Objectives</div>
+      <h2 class="section-title">Research Objectives &<br /><span class="gradient-text">Questions</span></h2>
+      <div class="objectives-layout">
+        <div class="main-objective">
+          <div class="main-obj-icon">🎯</div>
+          <div class="main-obj-content">
+            <h3>Main Objective</h3>
+            <p>To develop an intelligent LTE band recommendation system based on crowdsourced spatio-temporal performance analysis that improves user-experienced network performance and promotes balanced utilization of LTE frequency bands in Sri Lanka.</p>
+          </div>
+        </div>
+        <div class="specific-objectives">
+          <h3>Specific Objectives</h3>
+          <div class="obj-list">
+            <div class="obj-item">
+              <div class="obj-num">01</div>
+              <p>Design a scalable crowdsourced data collection framework for LTE performance metrics</p>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">02</div>
+              <p>Analyze spatio-temporal variations in LTE band performance across Sri Lanka</p>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">03</div>
+              <p>Implement an AI-powered recommendation engine for LTE band selection</p>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">04</div>
+              <p>Develop a user-friendly Android application delivering actionable band recommendations</p>
+            </div>
+            <div class="obj-item">
+              <div class="obj-num">05</div>
+              <p>Evaluate the effectiveness of the proposed system in improving network performance</p>
+            </div>
+          </div>
+        </div>
+        <div class="research-questions">
+          <h3>Research Questions</h3>
+          <div class="rq-list">
+            <div class="rq-item">
+              <span class="rq-q">Q1</span>
+              <p>How does LTE performance vary across different frequency bands, locations, and time periods?</p>
+            </div>
+            <div class="rq-item">
+              <span class="rq-q">Q2</span>
+              <p>Can crowdsourced performance data identify underutilized LTE bands?</p>
+            </div>
+            <div class="rq-item">
+              <span class="rq-q">Q3</span>
+              <p>How effective are AI-driven recommendations in improving user-experienced throughput?</p>
+            </div>
+            <div class="rq-item">
+              <span class="rq-q">Q4</span>
+              <p>To what extent can user-level band recommendations contribute to better load distribution?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── METHODOLOGY ─────────── -->
+  <section class="section gradient-section" id="methodology">
+    <div class="container">
+      <div class="section-badge light">Methodology</div>
+      <h2 class="section-title light">How We Built It</h2>
+      <div class="method-flow">
+        <div class="method-step">
+          <div class="step-icon">📱</div>
+          <div class="step-num">01</div>
+          <h3>Data Collection</h3>
+          <p>Android app collects RSRP, RSRQ, SINR, download/upload speeds, GPS coordinates, tower ID, and timestamps from real devices across Sri Lanka.</p>
+          <div class="step-tags">
+            <span>TelephonyManager</span>
+            <span>GPS</span>
+            <span>OkHttp</span>
+          </div>
+        </div>
+        <div class="method-arrow">→</div>
+        <div class="method-step">
+          <div class="step-icon">🕐</div>
+          <div class="step-num">02</div>
+          <h3>Temporal Segmentation</h3>
+          <p>24-hour day divided into 12 two-hour time slots to capture traffic variation — from late-night low-usage to prime-time peak congestion.</p>
+          <div class="step-tags">
+            <span>12 Time Slots</span>
+            <span>Day-of-Week</span>
+            <span>Pattern Analysis</span>
+          </div>
+        </div>
+        <div class="method-arrow">→</div>
+        <div class="method-step">
+          <div class="step-icon">☁️</div>
+          <div class="step-num">03</div>
+          <h3>Crowdsourced Storage</h3>
+          <p>All samples uploaded to Supabase PostgreSQL. Aggregated band statistics indexed by tower, ISP, time slot, and location for fast queries.</p>
+          <div class="step-tags">
+            <span>Supabase</span>
+            <span>PostgreSQL</span>
+            <span>Room DB</span>
+          </div>
+        </div>
+        <div class="method-arrow">→</div>
+        <div class="method-step">
+          <div class="step-icon">🤖</div>
+          <div class="step-num">04</div>
+          <h3>AI Recommendation</h3>
+          <p>RAG (Retrieval-Augmented Generation) combines real-time metrics with historical crowdsourced data. Qwen 3 32B LLM generates human-readable, explainable band recommendations.</p>
+          <div class="step-tags">
+            <span>Qwen 3 32B</span>
+            <span>RAG</span>
+            <span>Groq Cloud</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-slot-table">
+        <h3>⏰ Temporal Segmentation Strategy</h3>
+        <div class="slot-grid">
+          <div class="slot-item peak">
+            <span class="slot-num">Slot 0</span>
+            <span class="slot-time">00:00–02:00</span>
+            <span class="slot-ctx">Late Night</span>
+          </div>
+          <div class="slot-item">
+            <span class="slot-num">Slot 1</span>
+            <span class="slot-time">02:00–04:00</span>
+            <span class="slot-ctx">Deep Night</span>
+          </div>
+          <div class="slot-item">
+            <span class="slot-num">Slot 2</span>
+            <span class="slot-time">04:00–06:00</span>
+            <span class="slot-ctx">Early Morning</span>
+          </div>
+          <div class="slot-item medium">
+            <span class="slot-num">Slot 3</span>
+            <span class="slot-time">06:00–08:00</span>
+            <span class="slot-ctx">Morning Commute</span>
+          </div>
+          <div class="slot-item medium">
+            <span class="slot-num">Slot 4</span>
+            <span class="slot-time">08:00–10:00</span>
+            <span class="slot-ctx">Work Start</span>
+          </div>
+          <div class="slot-item high">
+            <span class="slot-num">Slot 5</span>
+            <span class="slot-time">10:00–12:00</span>
+            <span class="slot-ctx">Morning Peak</span>
+          </div>
+          <div class="slot-item critical">
+            <span class="slot-num">Slot 6</span>
+            <span class="slot-time">12:00–14:00</span>
+            <span class="slot-ctx">🔥 Lunch Peak</span>
+          </div>
+          <div class="slot-item high">
+            <span class="slot-num">Slot 7</span>
+            <span class="slot-time">14:00–16:00</span>
+            <span class="slot-ctx">Afternoon Work</span>
+          </div>
+          <div class="slot-item high">
+            <span class="slot-num">Slot 8</span>
+            <span class="slot-time">16:00–18:00</span>
+            <span class="slot-ctx">Evening Commute</span>
+          </div>
+          <div class="slot-item critical">
+            <span class="slot-num">Slot 9</span>
+            <span class="slot-time">18:00–20:00</span>
+            <span class="slot-ctx">🔥 Prime Time</span>
+          </div>
+          <div class="slot-item critical">
+            <span class="slot-num">Slot 10</span>
+            <span class="slot-time">20:00–22:00</span>
+            <span class="slot-ctx">🔥 Prime Peak</span>
+          </div>
+          <div class="slot-item medium">
+            <span class="slot-num">Slot 11</span>
+            <span class="slot-time">22:00–24:00</span>
+            <span class="slot-ctx">Late Evening</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── ARCHITECTURE ─────────── -->
+  <section class="section" id="architecture">
+    <div class="container">
+      <div class="section-badge">Architecture</div>
+      <h2 class="section-title">System Design &<br /><span class="gradient-text">Architecture</span></h2>
+      <div class="arch-layout">
+        <div class="arch-diagram">
+          <div class="arch-layer layer-ui">
+            <div class="layer-label">UI Layer</div>
+            <div class="arch-blocks">
+              <div class="arch-block">Home Screen</div>
+              <div class="arch-block">Speed Test</div>
+              <div class="arch-block">Map View</div>
+              <div class="arch-block">Recommend</div>
+              <div class="arch-block">Settings</div>
+            </div>
+          </div>
+          <div class="arch-arrow-down">↓</div>
+          <div class="arch-layer layer-vm">
+            <div class="layer-label">ViewModel Layer (MVVM)</div>
+            <div class="arch-blocks">
+              <div class="arch-block">HomeViewModel</div>
+              <div class="arch-block">SpeedTestViewModel</div>
+              <div class="arch-block">RecommendViewModel</div>
+            </div>
+          </div>
+          <div class="arch-arrow-down">↓</div>
+          <div class="arch-layer layer-repo">
+            <div class="layer-label">Repository Layer</div>
+            <div class="arch-blocks-row">
+              <div class="arch-block-wide">SpeedSampleRepository</div>
+              <div class="arch-block-wide">TelemetryRepository</div>
+              <div class="arch-block-wide">TowerRepository</div>
+            </div>
+          </div>
+          <div class="arch-arrow-down">↓</div>
+          <div class="arch-data-layer">
+            <div class="data-source ds-local">
+              <div class="ds-icon">💾</div>
+              <div class="ds-name">Room DB</div>
+              <div class="ds-desc">Local Cache</div>
+            </div>
+            <div class="data-source ds-remote">
+              <div class="ds-icon">☁️</div>
+              <div class="ds-name">Supabase</div>
+              <div class="ds-desc">Crowdsourced DB</div>
+            </div>
+            <div class="data-source ds-ai">
+              <div class="ds-icon">🤖</div>
+              <div class="ds-name">Groq + Qwen3</div>
+              <div class="ds-desc">AI Engine</div>
+            </div>
+            <div class="data-source ds-tele">
+              <div class="ds-icon">📡</div>
+              <div class="ds-name">Telephony API</div>
+              <div class="ds-desc">Live Metrics</div>
+            </div>
+          </div>
+        </div>
+        <div class="arch-stack">
+          <h3>Technology Stack</h3>
+          <div class="stack-table">
+            <div class="stack-row">
+              <div class="stack-category">Language</div>
+              <div class="stack-tech kotlin">Kotlin (100%)</div>
+            </div>
+            <div class="stack-row">
+              <div class="stack-category">UI Toolkit</div>
+              <div class="stack-tech compose">Jetpack Compose + Material 3</div>
+            </div>
+            <div class="stack-row">
+              <div class="stack-category">Architecture</div>
+              <div class="stack-tech arch">MVVM + Clean Architecture</div>
+            </div>
+            <div class="stack-row">
+              <div class="stack-category">DI</div>
+              <div class="stack-tech di">Hilt (Dagger)</div>
+            </div>
+            <div class="stack-row">
+              <div class="stack-category">Networking</div>
+              <div class="stack-tech net">Retrofit + OkHttp</div>
+            </div>
+            <div class="stack-row">
+              <div class="stack-category">Database</div>
+              <div class="stack-tech db">Room + Supabase PostgreSQL</div>
+            </div>
+            <div class="stack-row">
+              <div class="stack-category">AI / ML</div>
+              <div class="stack-tech ai">Groq Cloud + Qwen 3 32B LLM</div>
+            </div>
+            <div class="stack-row">
+              <div class="stack-category">Maps</div>
+              <div class="stack-tech maps">OSMDroid (OpenStreetMap)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── RESULTS ─────────── -->
+  <section class="section dark-section" id="results">
+    <div class="container">
+      <div class="section-badge light">Results & Evaluation</div>
+      <h2 class="section-title light">Empirical Validation</h2>
+      <p class="section-intro light">46 real-world field samples collected under identical environmental conditions, comparing automatic vs. manual band selection across Sri Lanka.</p>
+
+      <div class="results-stats">
+        <div class="result-stat-card">
+          <div class="result-icon">⬇️</div>
+          <div class="result-number">+59.8%</div>
+          <div class="result-metric">Download Speed</div>
+          <div class="result-detail">13.37 → 21.37 Mbps avg.</div>
+        </div>
+        <div class="result-stat-card">
+          <div class="result-icon">⬆️</div>
+          <div class="result-number">+23.3%</div>
+          <div class="result-metric">Upload Speed</div>
+          <div class="result-detail">6.90 → 8.51 Mbps avg.</div>
+        </div>
+        <div class="result-stat-card">
+          <div class="result-icon">🎯</div>
+          <div class="result-number">95.3%</div>
+          <div class="result-metric">Connection Accuracy</div>
+          <div class="result-detail">vs. 75.4% auto selection</div>
+        </div>
+        <div class="result-stat-card highlight">
+          <div class="result-icon">🔥</div>
+          <div class="result-number">+123%</div>
+          <div class="result-metric">Peak Hour Gain</div>
+          <div class="result-detail">Lunch peak (Slot 6)</div>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>📊 Average Throughput Comparison</h3>
+          <canvas id="throughputChart" height="220"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>⏱️ Speed by Time Slot</h3>
+          <canvas id="timeSlotChart" height="220"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>🎯 Connection Accuracy (%)</h3>
+          <canvas id="accuracyChart" height="220"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>📡 Signal Strength vs Speed</h3>
+          <canvas id="paradoxChart" height="220"></canvas>
+        </div>
+      </div>
+
+      <div class="key-finding">
+        <div class="finding-icon">💡</div>
+        <div class="finding-text">
+          <strong>Key Finding:</strong> During Lunch Peak hours (Slot 6), manual band selection delivered a <strong>123% speed improvement</strong> — proving that automatic selection fails most catastrophically during high-traffic periods, when it directs all users to the same congested "strongest signal" band.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── FEATURES ─────────── -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-badge">App Features</div>
+      <h2 class="section-title">What the App Does</h2>
+      <div class="features-grid">
+        <div class="feature-card featured">
+          <div class="feature-icon">🤖</div>
+          <h3>AI Band Recommendation</h3>
+          <p>Qwen 3 32B LLM with RAG architecture analyzes your location, time slot, and crowdsourced historical data to recommend the optimal LTE band with a human-readable explanation.</p>
+          <div class="feature-chips">
+            <span>Groq Cloud</span>
+            <span>RAG</span>
+            <span>Confidence Score</span>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📡</div>
+          <h3>Real-Time Signal Telemetry</h3>
+          <p>Continuously monitors RSRP, RSRQ, SINR, Band ID, eNodeB Tower ID, and Carrier Aggregation data from your device in real time.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Professional Speed Testing</h3>
+          <p>Dual-mode testing: Auto HTTP benchmarking or manual entry of Ookla results. Measures download, upload, and latency with an animated speed gauge.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗺️</div>
+          <h3>Interactive Tower Map</h3>
+          <p>Visualizes 5,000+ LTE towers across Sri Lanka using OpenStreetMap. Shows Dialog (2,200+), Mobitel (1,400+), and Hutch (1,200+) infrastructure.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>ISP Speed Leaderboard</h3>
+          <p>Real-time crowdsourced ranking of ISP performance by location and time slot, showing which operator delivers the best speeds near you right now.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3>Crowdsourced Intelligence</h3>
+          <p>Every user's speed test contributes to the shared knowledge base. The more users, the smarter the recommendations become for everyone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── COVERAGE ─────────── -->
+  <section class="section coverage-section">
+    <div class="container">
+      <div class="section-badge">Network Coverage</div>
+      <h2 class="section-title">Sri Lanka Tower<br /><span class="gradient-text">Infrastructure Mapped</span></h2>
+      <div class="coverage-cards">
+        <div class="coverage-card dialog">
+          <div class="coverage-logo">Dialog</div>
+          <div class="coverage-count">2,200+</div>
+          <div class="coverage-label">LTE Towers</div>
+          <div class="coverage-bar"><div class="cbar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="coverage-card mobitel">
+          <div class="coverage-logo">Mobitel</div>
+          <div class="coverage-count">1,400+</div>
+          <div class="coverage-label">LTE Towers</div>
+          <div class="coverage-bar"><div class="cbar-fill" style="width:64%"></div></div>
+        </div>
+        <div class="coverage-card hutch">
+          <div class="coverage-logo">Hutch</div>
+          <div class="coverage-count">1,200+</div>
+          <div class="coverage-label">LTE Towers</div>
+          <div class="coverage-bar"><div class="cbar-fill" style="width:55%"></div></div>
+        </div>
+        <div class="coverage-card total">
+          <div class="coverage-logo">Total</div>
+          <div class="coverage-count">5,000+</div>
+          <div class="coverage-label">Towers Across Sri Lanka</div>
+          <div class="coverage-bar"><div class="cbar-fill" style="width:100%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── TEAM ─────────── -->
+  <section class="section dark-section" id="team">
+    <div class="container">
+      <div class="section-badge light">Research Team</div>
+      <h2 class="section-title light">Meet the Researchers</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">MKA</div>
+          <div class="team-name">M.A.K. Akalanka</div>
+          <div class="team-id">ICT/21/805</div>
+          <div class="team-role">Research & Development</div>
+          <div class="team-dept">Dept. of Information & Communication Technology</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">KNA</div>
+          <div class="team-name">K.G.N. Amanda</div>
+          <div class="team-id">ICT/21/806</div>
+          <div class="team-role">Research & Development</div>
+          <div class="team-dept">Dept. of Information & Communication Technology</div>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">JKU</div>
+          <div class="team-name">J.K.S. Uthpala</div>
+          <div class="team-id">ICT/21/935</div>
+          <div class="team-role">Research & Development</div>
+          <div class="team-dept">Dept. of Information & Communication Technology</div>
+        </div>
+      </div>
+      <div class="supervisor-card">
+        <div class="supervisor-icon">👩‍🏫</div>
+        <div class="supervisor-info">
+          <div class="supervisor-label">Supervised By</div>
+          <div class="supervisor-name">Mrs. Sankani Heenkenda</div>
+          <div class="supervisor-inst">Faculty of Technology · University of Sri Jayewardenepura</div>
+        </div>
+      </div>
+      <div class="institution-banner">
+        <div class="inst-text">
+          <div class="inst-name">University of Sri Jayewardenepura</div>
+          <div class="inst-dept">Faculty of Technology · Department of Information & Communication Technology</div>
+          <div class="inst-group">4th Year Research Project · Group 14 · January 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── FOOTER ─────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-icon">📡</span>
+        <span>LTE <strong>Band Optimizer</strong></span>
+      </div>
+      <p class="footer-text">Developed for educational & research purposes · University of Sri Jayewardenepura 🇱🇰</p>
+      <p class="footer-copy">© 2026 M.A.K. Akalanka, K.G.N. Amanda, J.K.S. Uthpala · All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
